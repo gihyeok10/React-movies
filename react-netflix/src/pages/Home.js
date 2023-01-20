@@ -36,14 +36,14 @@ const Home = () => {
     console.log("lodaing값:",loading)
   }
   return (
-    <div>
+    <div className="home-div">
       <Banner movie={popularMovies.results[1]} />
 
-      <h1>popularMovies</h1>
+      <h1 className="movies">popularMovies</h1>
       <MovieSlide movies={popularMovies} />
-      <h1>top rated movie</h1>
+      <h1 className="movies">top rated movie</h1>
       <MovieSlide movies={topRatedMovies} />
-      <h1>upcoming moveie</h1>
+      <h1 className="movies">upcoming moveie</h1>
       <MovieSlide movies={upcomingMovies} />
     </div>
   );

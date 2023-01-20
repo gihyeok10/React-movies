@@ -4,7 +4,7 @@ function getMovies() {
   return async (dispatch) => {
     try {
       dispatch({ type: "GET_MOVIES_REQUEST" });
-      
+
       const topRatedApi = api.get(
         `movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
       );
@@ -17,13 +17,18 @@ function getMovies() {
         `movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
       );
 
+      const genreApi = api.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`)
+
       // let data = await Promise.all([topRatedApi,popualrMovieApi,upcomingApi])  //api한번에 보여주기 느낌.
 
-      let [topRatedMovies, popularMovies, upcomingMovies] = await Promise.all([
+      let [topRatedMovies, popularMovies, upcomingMovies,genreList] = await Promise.all([
         topRatedApi,
         popularMoviesApi,
         upcomingApi,
+        genreApi,
       ]);
+
+      console.log("장르:",genreList.data.genres[0].name)
 
       // console.log(topRatedMovies)
       // console.log(popualrMovies)
@@ -35,6 +40,7 @@ function getMovies() {
           popularMovies: popularMovies.data,
           topRatedMovies: topRatedMovies.data,
           upcomingMovies: upcomingMovies.data,
+          genreList:genreList.data.genres
         },
       });
       // let url = `https://api.themoviedb.org/3/movie/popular?api_key=<<api_key>>&language=en-US&page=1`
