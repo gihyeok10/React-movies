@@ -23,7 +23,6 @@ const responsive = {
 };
 
 const MovieSlide = ({ movies }) => {
-  console.log("프롭스한 무비데이터:", movies);
 
   return (
     <div className="card-div">

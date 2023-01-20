@@ -1,10 +1,28 @@
 import React from "react";
 import { Badge } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { movieAction } from "../redux/actions/movieAction";
+
 const MovieCard = ({ item }) => {
+  const dispatch = useDispatch()
+
+
+  const navigate = useNavigate()
+  const showDetail = () => {
+      dispatch(movieAction.getMovies(item.id))
+      navigate(`/movies:${item.id}`)
+      
+  }
+
+  
+
+  
+  
   const { genreList } = useSelector((state) => state.movie);
   return (
     <div
+      onClick={showDetail}
       className="card"
       style={{
         backgroundImage:

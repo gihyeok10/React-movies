@@ -1,9 +1,13 @@
 import api from "./api";
 const API_KEY = process.env.REACT_APP_API_KEY;
-function getMovies() {
+function getMovies(id) {
   return async (dispatch) => {
     try {
       dispatch({ type: "GET_MOVIES_REQUEST" });
+      
+
+      dispatch({type: "GET_MOVIES_DETAIL",payload:{id:id}})
+
 
       const topRatedApi = api.get(
         `movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
@@ -28,7 +32,6 @@ function getMovies() {
         genreApi,
       ]);
 
-      console.log("장르:",genreList.data.genres[0].name)
 
       // console.log(topRatedMovies)
       // console.log(popualrMovies)
