@@ -1,20 +1,47 @@
 import React, { useEffect } from 'react'
+import { Badge } from "react-bootstrap";
 import { useSelector,useDispatch } from 'react-redux';
-import { movieAction } from '../redux/actions/movieAction';
 import { useParams } from 'react-router-dom'
+import { detailAction } from '../redux/actions/detailAction';
+import { movieAction } from '../redux/actions/movieAction';
 const MovieDetail = () => {
-  const dispatch = useDispatch();
   const {id} = useParams();
-  console.log("Id는용",id)
 
-  const getProductDetail = () => {
-    // let url = `https://my-json-server.typicode.com/gihyeok10/React/products/${id}` 배포주소
-    dispatch(movieAction.getMovies(id))
-  }
+  const {detailData} = useSelector(
+    (state) => state.detail
+  );
+  const dispatch = useDispatch();
+  
+  console.log("유스셀렉터데이터:",detailData)
+  useEffect(() => {
+    dispatch(detailAction.getDetailMovies(id));
+  }, []);
 
-  return (
-    
-    <div>요롱롱</div>
+  
+    return (
+     <div>
+      {detailData && <div>
+        <h1>{detailData.id}</h1>
+        <h1>영화제목{detailData.title}</h1>
+        {detailData.genres.map(id => <Badge bg="danger" key={id}>{id.name}</Badge> )}
+
+
+
+        <div
+      className="card"
+      style={{
+        backgroundImage:
+          "url(" +
+          `https://www.themoviedb.org/t/p/w355_and_h200_multi_faces${detailData.poster_path}` +
+          ")",
+        height: 200,
+        width: 300,
+      }}
+    ></div>
+      </div>}
+        
+      
+     </div>
   )
 }
 

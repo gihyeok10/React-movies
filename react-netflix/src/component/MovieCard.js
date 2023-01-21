@@ -5,13 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { movieAction } from "../redux/actions/movieAction";
 
 const MovieCard = ({ item }) => {
-  const dispatch = useDispatch()
 
 
   const navigate = useNavigate()
   const showDetail = () => {
-      dispatch(movieAction.getMovies(item.id))
-      navigate(`/movies:${item.id}`)
+      
+      navigate(`/detail/${item.id}`)
       
   }
 
