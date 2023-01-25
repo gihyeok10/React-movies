@@ -23,7 +23,7 @@ const Home = () => {
     console.log("lodaingr값",loading)
     return <div>
        <ClipLoader
-        color= "white"
+        color= "tomato"
         loading={loading}
         size={150}
       />
@@ -35,7 +35,7 @@ const Home = () => {
   }
   return (
     <div className="home-div">
-      <Banner movie={popularMovies.results[7]} />
+      <Banner movie={popularMovies.results[4]} />
 
       <h1 className="movies">popularMovies</h1>
       <MovieSlide movies={popularMovies} />

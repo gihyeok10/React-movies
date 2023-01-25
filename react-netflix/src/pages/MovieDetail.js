@@ -9,10 +9,13 @@ import { faCoffee, faUser, faStar } from "@fortawesome/free-solid-svg-icons";
 const MovieDetail = () => {
   const { id } = useParams();
 
-  const { detailData, loading } = useSelector((state) => state.detail);
+  const { detailData, loading, creditsData } = useSelector(
+    (state) => state.detail
+  );
   const dispatch = useDispatch();
 
   console.log("유스셀렉터데이터:", detailData);
+  console.log("출연진:", creditsData);
   useEffect(() => {
     dispatch(detailAction.getDetailMovies(id));
   }, []);
@@ -83,19 +86,19 @@ const MovieDetail = () => {
                 <h6>${detailData.budget}</h6>
               </div>
               <div className="budget-div">
-              <Badge bg="danger" className="budget-badge">
+                <Badge bg="danger" className="budget-badge">
                   Revenue
                 </Badge>
-              <h6>${detailData.revenue}</h6>
+                <h6>${detailData.revenue}</h6>
               </div>
               <div className="budget-div">
-              <Badge bg="danger" className="budget-badge">
+                <Badge bg="danger" className="budget-badge">
                   Releas-date
                 </Badge>
-              <h6>{detailData.release_date}</h6>
+                <h6>{detailData.release_date}</h6>
               </div>
               <div className="budget-div">
-              <Badge bg="danger" className="budget-badge">
+                <Badge bg="danger" className="budget-badge">
                   Run-time
                 </Badge>
                 <h6>{detailData.runtime}</h6>
@@ -103,15 +106,35 @@ const MovieDetail = () => {
             </div>
 
             <div className="trailer-div">
-              <div><h6>Whatch Trailer</h6></div>
+              <div>
+                <h6>Whatch Trailer</h6>
+              </div>
               <div>hart</div>
             </div>
           </Col>
         </Row>
       </Container>
 
-      <Container>
-        <div>안녕하수꽈</div>
+      <Container className="second-container">
+        <h3>Cast</h3>
+        <div className="cast-div">
+          {creditsData.cast &&
+            creditsData.cast.map((id, index) => {
+              if (index <= 6)
+                return (
+                  <div className="profile-div">
+                    <img
+                      src={`https://www.themoviedb.org/t/p/w138_and_h175_face${creditsData.cast[index].profile_path}`}
+                    ></img>
+                    <p>{id.name}</p>
+                  </div>
+                );
+            })}
+        </div>
+      </Container>
+
+      <Container className="review-div">
+        <div>dkss</div>
       </Container>
     </div>
   );
