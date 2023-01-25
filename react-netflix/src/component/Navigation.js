@@ -7,7 +7,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 function NavScrollExample() {
   return (
-    <Navbar bg="black" variant="dark" expand="lg">
+    <Navbar bg="black" variant="dark" expand="lg" className='nav-bar'>
       <Container fluid>
         <Navbar.Brand href="#"><img width={100} src ="https://www.edigitalagency.com.au/wp-content/uploads/Netflix-logo-red-black-png.png" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

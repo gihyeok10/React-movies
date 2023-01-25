@@ -16,7 +16,7 @@ function  App() {
   }
   api();
   return (
-    <div>
+    <div className='all'>
       <Navigation>
       </Navigation>
         <Routes>

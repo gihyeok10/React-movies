@@ -1,5 +1,6 @@
 let initialState = {
-   detailData:{}
+   detailData:{},
+   loading: true
   };
   
   function detailReducer(state = initialState, action) {

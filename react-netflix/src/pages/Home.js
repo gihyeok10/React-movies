@@ -35,7 +35,7 @@ const Home = () => {
   }
   return (
     <div className="home-div">
-      <Banner movie={popularMovies.results[1]} />
+      <Banner movie={popularMovies.results[7]} />
 
       <h1 className="movies">popularMovies</h1>
       <MovieSlide movies={popularMovies} />

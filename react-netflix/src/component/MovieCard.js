@@ -45,7 +45,7 @@ const MovieCard = ({ item }) => {
 
         <div>
           <span>{item.vote_average}</span>
-          <span>{item.vote_adult ? "청불" : "Under 18"}</span>
+          <span>{item.vote_adult ? "Over 18" : "Under 18"}</span>
         </div>
       </div>
     </div>

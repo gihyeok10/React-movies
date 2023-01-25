@@ -54,5 +54,89 @@
 }
 
 .container{
+  
+}
+
+.Badge{margin: 5px;
+}
+.detail-container container{
+  background-color: black;
+}
+
+.detail-background {
+  color: white;
+  background-color: black;
+  height: 100%;
   margin-top: 4em;
+
+}
+
+.all{
+  background-color: black;
+}
+
+.genres-div{
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.title-div{
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.title-div h1{
+  font-weight: 500;
+  font-size: 60px;
+}
+
+.subtitle-div{
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.vote-div{
+  display: flex;
+  font-size: 20px;
+  margin-bottom: 1em;
+  border-bottom: 1px solid white;
+  height: 5%;
+}
+
+.popularity-div{
+  margin-left: 1em;
+}
+
+.adult-div{
+  margin-left: 1em;
+  color: tomato;
+  font-weight: bold;
+}
+
+.overview-div{
+  margin-bottom: 1em;
+  border-bottom: 1px solid white;
+}
+.overview-div h5{
+  margin-bottom: 1em;
+}
+
+.sub-div{
+  margin-bottom: 1em;
+  border-bottom: 1px solid white;
+}
+
+.budget-div{
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.budget-badge{
+  width: 100px;
+  height: 20px;
+  margin-right: 1em;
+}
+
+.trailer-div{
+  
 }
