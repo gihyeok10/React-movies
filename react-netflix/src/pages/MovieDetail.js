@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Badge, Col, Container, Row } from "react-bootstrap";
+import { Badge, Col, Container, Row, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { detailAction } from "../redux/actions/detailAction";
@@ -9,13 +9,14 @@ import { faCoffee, faUser, faStar } from "@fortawesome/free-solid-svg-icons";
 const MovieDetail = () => {
   const { id } = useParams();
 
-  const { detailData, loading, creditsData } = useSelector(
+  const { detailData, loading, creditsData,reviewsData } = useSelector(
     (state) => state.detail
   );
   const dispatch = useDispatch();
 
   console.log("유스셀렉터데이터:", detailData);
   console.log("출연진:", creditsData);
+  console.log("리뷰요",reviewsData)
   useEffect(() => {
     dispatch(detailAction.getDetailMovies(id));
   }, []);
@@ -132,9 +133,19 @@ const MovieDetail = () => {
             })}
         </div>
       </Container>
+      <Container className="review-button">
+        <div>
+          reviews
+        </div>
+        <div>
+          추천
+        </div>
+      </Container>
 
       <Container className="review-div">
-        <div>dkss</div>
+        
+        {reviewsData.results&& reviewsData.results.map(id => {return <div className="review-box">{id.author}/{id.content}</div> })
+       }
       </Container>
     </div>
   );

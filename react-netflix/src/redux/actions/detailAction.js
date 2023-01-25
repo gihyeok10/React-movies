@@ -10,11 +10,15 @@ function getDetailMovies(id) {
       `movie/${id}/credits?api_key=${API_KEY}&language=en-US`
     );
 
+    const reviewsApi = api.get(
+      `movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+    )
    
 
-    let [detailData, creditsData,] = await Promise.all([
+    let [detailData, creditsData,reviewsData] = await Promise.all([
       detailApi,
       creditsApi,
+      reviewsApi
     
     ]);
     console.log("데이터 받아라~", detailData.data);
@@ -23,6 +27,7 @@ function getDetailMovies(id) {
       payload: {
         detailData: detailData.data,
         creditsData: creditsData.data,
+        reviewsData: reviewsData.data
         
       },
     });

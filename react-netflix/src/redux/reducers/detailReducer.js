@@ -2,6 +2,7 @@ let initialState = {
    detailData:{},
    creditsData:{},
    loading: true,
+   reviewsData:{}
   };
   
   function detailReducer(state = initialState, action) {
@@ -11,7 +12,7 @@ let initialState = {
       
   
        case "GET_DETAIL_SUCCESS":
-        return { ...state, detailData:payload.detailData, creditsData:payload.creditsData,castData:payload.castData};
+        return { ...state, detailData:payload.detailData, creditsData:payload.creditsData,castData:payload.castData,reviewsData:payload.reviewsData};
 
       default:
         return { ...state };
