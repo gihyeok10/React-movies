@@ -144,6 +144,7 @@
 .second-container{
   margin-top: 8em;
   
+  
 }
 .second-container h3{
   margin-bottom: 1em;
@@ -153,13 +154,12 @@
 
 .cast-div{
   display: flex;
- 
+  
 }
 
 .profile-div{
-  margin-left: 3em;
-  justify-items: center;
-  align-items: center;
+ margin-right: 3em;
+  
 }
 
 .profile-div p{
@@ -178,3 +178,35 @@
 .review-box{
   margin-top: 2em;
 }
+
+.author{
+  font-weight: bold;
+}
+
+.review{
+  width: 200px;
+  height: 45px;
+  border: 1px solid white;
+  margin-right: 20px;
+  text-align: center;  
+  cursor: pointer;
+}
+.review p{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.recommend{
+  width: 200px;
+  height: 45px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.recommend p {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;  
+
+}
+

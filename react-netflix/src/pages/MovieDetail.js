@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Badge, Col, Container, Row, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -9,14 +9,27 @@ import { faCoffee, faUser, faStar } from "@fortawesome/free-solid-svg-icons";
 const MovieDetail = () => {
   const { id } = useParams();
 
-  const { detailData, loading, creditsData,reviewsData } = useSelector(
+  const { detailData, loading, creditsData, reviewsData } = useSelector(
     (state) => state.detail
   );
   const dispatch = useDispatch();
+  
+  const [reviews,setReviews] = useState(true)
+  const [recommend,setRecommend] = useState(false)
 
+  function reviewClick(){
+    setReviews(!reviews)
+    setRecommend(false)
+
+  }
+
+  function recommendClick(){
+    setRecommend(!recommend)
+    setReviews(!reviews)
+  }
   console.log("유스셀렉터데이터:", detailData);
   console.log("출연진:", creditsData);
-  console.log("리뷰요",reviewsData)
+  console.log("리뷰요", reviewsData);
   useEffect(() => {
     dispatch(detailAction.getDetailMovies(id));
   }, []);
@@ -134,18 +147,20 @@ const MovieDetail = () => {
         </div>
       </Container>
       <Container className="review-button">
-        <div>
-          reviews
-        </div>
-        <div>
-          추천
-        </div>
+        <div className="review" onClick={reviewClick} style={{backgroundColor: reviews? "red" : "black" }}><p>Reviews</p></div>
+        <div className="recommend" onClick={recommendClick} style={{backgroundColor: recommend? "red" : "black" }}><p>Recommend</p></div>
       </Container>
 
       <Container className="review-div">
-        
-        {reviewsData.results&& reviewsData.results.map(id => {return <div className="review-box">{id.author}/{id.content}</div> })
-       }
+        {reviewsData.results &&
+          reviewsData.results.map((id) => {
+            return (
+              <div className="review-box">
+                <div className="author">{id.author}</div>
+                <div>{id.content}</div>
+              </div>
+            );
+          })}
       </Container>
     </div>
   );
@@ -154,3 +169,6 @@ const MovieDetail = () => {
 //영화 포스터 , 영화 이름, 장르, 개요, 평점, 관객, 나이, Budget, Revenue , Release Day,Time , 트레일러, 좋아요, 출연진, 리뷰
 
 export default MovieDetail;
+
+
+//리뷰와 추천영화 뜨게하게 ==> 서로 조건부 랜더링 reviews를 클리하면 리뷰 , 추천영화 클릭하면 추천 영화 
