@@ -4,6 +4,7 @@ let initialState = {
   loading: true,
   reviewsData: {},
   recommendData: {},
+  trailerData:{},
 };
 
 function detailReducer(state = initialState, action) {
@@ -18,6 +19,7 @@ function detailReducer(state = initialState, action) {
         castData: payload.castData,
         reviewsData: payload.reviewsData,
         recommendData:payload.recommendData,
+        trailerData:payload.trailerData,
       };
 
     default:

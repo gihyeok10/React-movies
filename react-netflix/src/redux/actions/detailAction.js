@@ -18,12 +18,16 @@ function getDetailMovies(id) {
       `movie/${id}/recommendations?api_key=${API_KEY}&language=en-US&page=1`
     )
    
+    const trailerApi =api.get(
+      `movie/${id}/videos?api_key=${API_KEY}&language=en-US`
+    )
 
-    let [detailData, creditsData,reviewsData,recommendData] = await Promise.all([
+    let [detailData, creditsData,reviewsData,recommendData,trailerData] = await Promise.all([
       detailApi,
       creditsApi,
       reviewsApi,
-      recommendApi
+      recommendApi,
+      trailerApi
     
     ]);
     console.log("데이터 받아라~", detailData.data);
@@ -33,7 +37,8 @@ function getDetailMovies(id) {
         detailData: detailData.data,
         creditsData: creditsData.data,
         reviewsData: reviewsData.data,
-        recommendData: recommendData.data
+        recommendData: recommendData.data,
+        trailerData:trailerData.data
         
       },
     });

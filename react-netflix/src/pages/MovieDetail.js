@@ -12,9 +12,8 @@ const MovieDetail = () => {
   const { id } = useParams();
 
   const { genreList } = useSelector((state) => state.movie);
-  const { detailData, creditsData, reviewsData, recommendData } = useSelector(
-    (state) => state.detail
-  );
+  const { detailData, creditsData, reviewsData, recommendData, trailerData } =
+    useSelector((state) => state.detail);
   const dispatch = useDispatch();
   const [modalShow, setModalShow] = useState(false);
   const [reviews, setReviews] = useState(true);
@@ -36,6 +35,11 @@ const MovieDetail = () => {
   console.log("리뷰요", reviewsData);
   console.log("추천이요", recommendData);
   console.log("장르요", genreList);
+
+  {
+    trailerData.results &&
+      console.log("트레일요키요", trailerData.results);
+  }
   useEffect(() => {
     dispatch(detailAction.getDetailMovies(id));
   }, []);
@@ -128,10 +132,17 @@ const MovieDetail = () => {
             <div className="trailer-div">
               <div>
                 <Button variant="danger" onClick={() => setModalShow(true)}>
-                Go to the trailer
+                  Go to the trailer
                 </Button>
 
-                <Modal show={modalShow} title={detailData.title} onHide={() => setModalShow(false)} />
+                {trailerData.results && (
+                  <Modal
+                    show={modalShow}
+                    title={detailData.title}
+                    keys={trailerData.results[0].key}
+                    onHide={() => setModalShow(false)}
+                  />
+                )}
               </div>
               <div>hart</div>
             </div>
