@@ -2,38 +2,54 @@ import React, { useEffect, useState } from "react";
 import { Badge, Col, Container, Row, Button } from "react-bootstrap";
 import { movieAction } from "../redux/actions/movieAction";
 import { useDispatch, useSelector } from "react-redux";
-import Banner from "../component/Banner";
-import MovieSlide from "../component/MovieSlide";
-import ClipLoader from "react-spinners/ClipLoader";
-import axios from "axios";
 import api from "../redux/actions/api";
+import Pagination from "react-js-pagination";
+import Page from "../component/Page";
+import { allAction } from "../redux/actions/allAction";
 const API_KEY = process.env.REACT_APP_API_KEY;
-const Movies =  () => {
-  
-  const [count,setCount] = useState(1)
+const Movies = () => {
+  const dispatch = useDispatch();
 
- const getApi = async() => {
-  const popularMoviesApi = api.get(
-    `movie/popular?api_key=${API_KEY}&language=en-US&page=${count}`
-  );
+  const [page, setPage] = useState(1);
 
-  let popularMovies=  await popularMoviesApi;
-  console.log(popularMovies.data)
- 
- }
+  useEffect(() => {
+    dispatch(allAction.getAll(page));
+  }, [page]);
 
- getApi()
+  const { allmoviesData, genreList } = useSelector((state) => state.all);
+  const handlePageChange = (page) => {
+    setPage(page);
+  };
 
- useEffect(()=>{
-  getApi();
- },[count])
+  const totalPages = 200;
+
+  console.log("데이타~~", allmoviesData);
+  console.log("장르오", genreList);
 
   return (
     <Container className="movies-container">
-      <div>
-        <h1>하이요!</h1>
-        <Button onClick={()=>{setCount(count+1)}}>CLICK</Button>
-      </div>
+      <Row>
+            {allmoviesData.results&& allmoviesData.results.map((item) => (
+              <Col
+                lg={4}
+                key={item.id}
+                style={{ marginBottom: 30, marginTop: 30 }}
+              >
+                <Page item={item} genreList={genreList} />
+               
+              </Col>
+            ))}
+          </Row>
+
+      <Pagination
+        activePage={page} // 현재 페이지
+        itemsCountPerPage={1} // 한 페이지랑 보여줄 아이템 갯수
+        totalItemsCount={totalPages} // 총 아이템 갯수
+        pageRangeDisplayed={5} // paginator의 페이지 범위
+        prevPageText={"<"} // "이전"을 나타낼 텍스트
+        nextPageText={">"} // "다음"을 나타낼 텍스트
+        onChange={handlePageChange} // 페이지 변경을 핸들링하는 함수
+      />
     </Container>
   );
 };

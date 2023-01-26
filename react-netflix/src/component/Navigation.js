@@ -18,7 +18,7 @@ function NavScrollExample() {
             navbarScroll
           >
             <Link to='/' className='nav-item'>Home</Link>
-            <Link to='/movies' className='nav-item'>Movies</Link>
+            <Link to='/movies' className='nav-item'>All Movies</Link>
         
           </Nav>
           <Form className="d-flex">
