@@ -6,30 +6,36 @@ import { detailAction } from "../redux/actions/detailAction";
 import { movieAction } from "../redux/actions/movieAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faUser, faStar } from "@fortawesome/free-solid-svg-icons";
+import RecommendCard from "../component/RecommendCard";
 const MovieDetail = () => {
   const { id } = useParams();
 
-  const { detailData, loading, creditsData, reviewsData } = useSelector(
+  const { genreList } = useSelector((state) => state.movie);
+  const { detailData, creditsData, reviewsData , recommendData } = useSelector(
     (state) => state.detail
   );
   const dispatch = useDispatch();
   
   const [reviews,setReviews] = useState(true)
   const [recommend,setRecommend] = useState(false)
-
+  const [change,setChange] = useState(true);
   function reviewClick(){
     setReviews(!reviews)
     setRecommend(false)
+    setChange(!change)
 
   }
 
   function recommendClick(){
     setRecommend(!recommend)
     setReviews(!reviews)
+    setChange(!change)
   }
   console.log("유스셀렉터데이터:", detailData);
   console.log("출연진:", creditsData);
   console.log("리뷰요", reviewsData);
+  console.log("추천이요",recommendData);
+  console.log("장르요",genreList)
   useEffect(() => {
     dispatch(detailAction.getDetailMovies(id));
   }, []);
@@ -151,6 +157,7 @@ const MovieDetail = () => {
         <div className="recommend" onClick={recommendClick} style={{backgroundColor: recommend? "red" : "black" }}><p>Recommend</p></div>
       </Container>
 
+      {change?       
       <Container className="review-div">
         {reviewsData.results &&
           reviewsData.results.map((id) => {
@@ -162,6 +169,14 @@ const MovieDetail = () => {
             );
           })}
       </Container>
+      : <Container className="recommend-div"> <Row>
+        {recommendData.results.map((item) => 
+          <Col lg={4} key={item.id} style={{marginBottom:30,marginTop:30}}>
+            <RecommendCard item={item} genreList={genreList}/>
+          </Col>
+        )}
+          
+        </Row></Container>}
     </div>
   );
 };

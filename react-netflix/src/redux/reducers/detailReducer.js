@@ -1,23 +1,28 @@
 let initialState = {
-   detailData:{},
-   creditsData:{},
-   loading: true,
-   reviewsData:{}
-  };
-  
-  function detailReducer(state = initialState, action) {
-    let { type, payload } = action;
-  
-    switch (type) {
-      
-  
-       case "GET_DETAIL_SUCCESS":
-        return { ...state, detailData:payload.detailData, creditsData:payload.creditsData,castData:payload.castData,reviewsData:payload.reviewsData};
+  detailData: {},
+  creditsData: {},
+  loading: true,
+  reviewsData: {},
+  recommendData: {},
+};
 
-      default:
-        return { ...state };
-    }
+function detailReducer(state = initialState, action) {
+  let { type, payload } = action;
+
+  switch (type) {
+    case "GET_DETAIL_SUCCESS":
+      return {
+        ...state,
+        detailData: payload.detailData,
+        creditsData: payload.creditsData,
+        castData: payload.castData,
+        reviewsData: payload.reviewsData,
+        recommendData:payload.recommendData,
+      };
+
+    default:
+      return { ...state };
   }
-  
-  export default detailReducer;
-  
+}
+
+export default detailReducer;
