@@ -138,7 +138,10 @@
 }
 
 .trailer-div{
+}
 
+.trailer-div h6{
+  cursor: pointer;
 }
 
 .second-container{

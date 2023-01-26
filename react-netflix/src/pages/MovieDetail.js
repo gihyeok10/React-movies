@@ -7,35 +7,35 @@ import { movieAction } from "../redux/actions/movieAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faUser, faStar } from "@fortawesome/free-solid-svg-icons";
 import RecommendCard from "../component/RecommendCard";
+import Modal from "../component/Youtube";
 const MovieDetail = () => {
   const { id } = useParams();
 
   const { genreList } = useSelector((state) => state.movie);
-  const { detailData, creditsData, reviewsData , recommendData } = useSelector(
+  const { detailData, creditsData, reviewsData, recommendData } = useSelector(
     (state) => state.detail
   );
   const dispatch = useDispatch();
-  
-  const [reviews,setReviews] = useState(true)
-  const [recommend,setRecommend] = useState(false)
-  const [change,setChange] = useState(true);
-  function reviewClick(){
-    setReviews(!reviews)
-    setRecommend(false)
-    setChange(!change)
-
+  const [modalShow, setModalShow] = useState(false);
+  const [reviews, setReviews] = useState(true);
+  const [recommend, setRecommend] = useState(false);
+  const [change, setChange] = useState(true);
+  function reviewClick() {
+    setReviews(!reviews);
+    setRecommend(false);
+    setChange(!change);
   }
 
-  function recommendClick(){
-    setRecommend(!recommend)
-    setReviews(!reviews)
-    setChange(!change)
+  function recommendClick() {
+    setRecommend(!recommend);
+    setReviews(!reviews);
+    setChange(!change);
   }
   console.log("유스셀렉터데이터:", detailData);
   console.log("출연진:", creditsData);
   console.log("리뷰요", reviewsData);
-  console.log("추천이요",recommendData);
-  console.log("장르요",genreList)
+  console.log("추천이요", recommendData);
+  console.log("장르요", genreList);
   useEffect(() => {
     dispatch(detailAction.getDetailMovies(id));
   }, []);
@@ -127,7 +127,11 @@ const MovieDetail = () => {
 
             <div className="trailer-div">
               <div>
-                <h6>Whatch Trailer</h6>
+                <Button variant="danger" onClick={() => setModalShow(true)}>
+                Go to the trailer
+                </Button>
+
+                <Modal show={modalShow} title={detailData.title} onHide={() => setModalShow(false)} />
               </div>
               <div>hart</div>
             </div>
@@ -153,30 +157,50 @@ const MovieDetail = () => {
         </div>
       </Container>
       <Container className="review-button">
-        <div className="review" onClick={reviewClick} style={{backgroundColor: reviews? "red" : "black" }}><p>Reviews</p></div>
-        <div className="recommend" onClick={recommendClick} style={{backgroundColor: recommend? "red" : "black" }}><p>Recommend</p></div>
+        <div
+          className="review"
+          onClick={reviewClick}
+          style={{ backgroundColor: reviews ? "red" : "black" }}
+        >
+          <p>Reviews</p>
+        </div>
+        <div
+          className="recommend"
+          onClick={recommendClick}
+          style={{ backgroundColor: recommend ? "red" : "black" }}
+        >
+          <p>Recommend</p>
+        </div>
       </Container>
 
-      {change?       
-      <Container className="review-div">
-        {reviewsData.results &&
-          reviewsData.results.map((id) => {
-            return (
-              <div className="review-box">
-                <div className="author">{id.author}</div>
-                <div>{id.content}</div>
-              </div>
-            );
-          })}
-      </Container>
-      : <Container className="recommend-div"> <Row>
-        {recommendData.results.map((item) => 
-          <Col lg={4} key={item.id} style={{marginBottom:30,marginTop:30}}>
-            <RecommendCard item={item} genreList={genreList}/>
-          </Col>
-        )}
-          
-        </Row></Container>}
+      {change ? (
+        <Container className="review-div">
+          {reviewsData.results &&
+            reviewsData.results.map((id) => {
+              return (
+                <div className="review-box">
+                  <div className="author">{id.author}</div>
+                  <div>{id.content}</div>
+                </div>
+              );
+            })}
+        </Container>
+      ) : (
+        <Container className="recommend-div">
+          {" "}
+          <Row>
+            {recommendData.results.map((item) => (
+              <Col
+                lg={4}
+                key={item.id}
+                style={{ marginBottom: 30, marginTop: 30 }}
+              >
+                <RecommendCard item={item} genreList={genreList} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      )}
     </div>
   );
 };
@@ -185,5 +209,4 @@ const MovieDetail = () => {
 
 export default MovieDetail;
 
-
-//리뷰와 추천영화 뜨게하게 ==> 서로 조건부 랜더링 reviews를 클리하면 리뷰 , 추천영화 클릭하면 추천 영화 
+//리뷰와 추천영화 뜨게하게 ==> 서로 조건부 랜더링 reviews를 클리하면 리뷰 , 추천영화 클릭하면 추천 영화
