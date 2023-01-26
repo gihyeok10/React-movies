@@ -7,16 +7,17 @@ const Youtube = (props) => {
   return (
     <Modal
       {...props}
+
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
+      <Modal.Header closeButton className="modal-body">
         <Modal.Title id="contained-modal-title-vcenter">
           {props.title}
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className="modal-body">
         <YouTube
           //videoId : https://www.youtube.com/watch?v={videoId} 유튜브 링크의 끝부분에 있는 고유한 아이디
           videoId={props.keys}
@@ -37,7 +38,7 @@ const Youtube = (props) => {
           }}
         />
       </Modal.Body>
-      <Modal.Footer>
+      <Modal.Footer style={{backgroundColor:"#282828"}}>
         <Button variant="danger" onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>

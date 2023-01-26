@@ -144,7 +144,7 @@ const MovieDetail = () => {
                   />
                 )}
               </div>
-              <div>hart</div>
+              <div></div>
             </div>
           </Col>
         </Row>

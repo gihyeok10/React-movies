@@ -8,13 +8,6 @@ import Navigation from './component/Navigation'
 const API_KEY = process.env.REACT_APP_API_KEY;
 function  App() {
 
-  const api = async() =>{
-  let url = `https://api.themoviedb.org/3/movie/76600?api_key=${API_KEY}&language=en-US`;
-  let respones = await fetch(url)
-  let data = await respones.json();
-  console.log("이거바라!!!!!!",data)
-  }
-  api();
   return (
     <div className='all'>
       <Navigation>

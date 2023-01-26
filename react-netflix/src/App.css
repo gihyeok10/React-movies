@@ -3,6 +3,7 @@
   text-decoration: none;
   margin-right: 20px;
 }
+.nav-item:hover{color: red;}
 
 .banner{
   height: 600px;
@@ -50,7 +51,7 @@
 }
 
 .movies{
-  color: white;
+  color:red;
 }
 
 .container{
@@ -111,6 +112,7 @@
   margin-left: 1em;
   color: tomato;
   font-weight: bold;
+  font-style: oblique;
 }
 
 .overview-div{
@@ -218,3 +220,11 @@
   margin-top: 3em;
 }
 
+.modal-body{
+  background-color: #282828;
+  color: white;
+}
+
+.movies-container{
+  height: 100%;
+}
