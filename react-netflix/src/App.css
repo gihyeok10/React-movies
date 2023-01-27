@@ -32,6 +32,7 @@
   
   height: 200px;
   width: 300px;
+  cursor: pointer;
 }
 
 .overlay{
@@ -286,3 +287,8 @@ ul.pagination li a.active {
   color: red;
 }
 /* 페이지 네이션 css */
+
+
+.all-card{
+  color: white;
+}

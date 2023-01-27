@@ -1,11 +1,19 @@
 import React from "react";
 import { Badge } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Page = ({ item, genreList }) => {
 
+  const navigate = useNavigate()
+  const showDetail = () => {
+      
+      navigate(`/detail/${item.id}`)
+      
+  }
   return (
     <div
       className="card"
+      onClick={showDetail}
       style={{
         backgroundImage:
           "url(" +

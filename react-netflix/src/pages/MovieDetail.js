@@ -12,7 +12,7 @@ const MovieDetail = () => {
   const { id } = useParams();
 
   const { genreList } = useSelector((state) => state.movie);
-  const { detailData, creditsData, reviewsData, recommendData, trailerData } =
+  const { detailData, creditsData, reviewsData, recommendData, trailerData,language } =
     useSelector((state) => state.detail);
   const dispatch = useDispatch();
   const [modalShow, setModalShow] = useState(false);
@@ -35,13 +35,13 @@ const MovieDetail = () => {
   console.log("리뷰요", reviewsData);
   console.log("추천이요", recommendData);
   console.log("장르요", genreList);
-
+  console.log("렝거지요",language)
   {
     trailerData.results &&
       console.log("트레일요키요", trailerData.results);
   }
   useEffect(() => {
-    dispatch(detailAction.getDetailMovies(id));
+    dispatch(detailAction.getDetailMovies(id,language));
   }, []);
 
   return (

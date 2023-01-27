@@ -1,25 +1,25 @@
 import api from "./api";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-function getDetailMovies(id) {
+function getDetailMovies(id,language) {
   console.log(`디테일 id는${id}`);
   return async (dispatch) => {
-    const detailApi = api.get(`movie/${id}?api_key=${API_KEY}&language=en-US`);
+    const detailApi = api.get(`movie/${id}?api_key=${API_KEY}&language=${language}`);
 
     const creditsApi = api.get(
-      `movie/${id}/credits?api_key=${API_KEY}&language=en-US`
+      `movie/${id}/credits?api_key=${API_KEY}&language=${language}`
     );
 
     const reviewsApi = api.get(
-      `movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+      `movie/${id}/reviews?api_key=${API_KEY}&language=${language}&page=1`
     )
 
     const recommendApi = api.get(
-      `movie/${id}/recommendations?api_key=${API_KEY}&language=en-US&page=1`
+      `movie/${id}/recommendations?api_key=${API_KEY}&language=${language}&page=1`
     )
    
     const trailerApi =api.get(
-      `movie/${id}/videos?api_key=${API_KEY}&language=en-US`
+      `movie/${id}/videos?api_key=${API_KEY}&language=${language}`
     )
 
     let [detailData, creditsData,reviewsData,recommendData,trailerData] = await Promise.all([

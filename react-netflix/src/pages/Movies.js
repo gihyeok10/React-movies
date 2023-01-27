@@ -6,15 +6,28 @@ import api from "../redux/actions/api";
 import Pagination from "react-js-pagination";
 import Page from "../component/Page";
 import { allAction } from "../redux/actions/allAction";
-const API_KEY = process.env.REACT_APP_API_KEY;
+import { detailAction } from "../redux/actions/detailAction";
+
 const Movies = () => {
   const dispatch = useDispatch();
+
+  const [language,setLanguage] = useState("en-Us")
 
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    dispatch(allAction.getAll(page));
-  }, [page]);
+    dispatch(allAction.getAll(page,language));
+  }, [page,language]);
+
+
+  const changeLanguage = () => {
+    setLanguage("ko")
+    dispatch(detailAction.getDetailMovies(language));
+  }
+
+  const changeLanguage2 = () => {
+    setLanguage("en-Us")
+  }
 
   const { allmoviesData, genreList } = useSelector((state) => state.all);
   const handlePageChange = (page) => {
@@ -23,10 +36,18 @@ const Movies = () => {
 
   const totalPages = 200;
 
-  console.log("데이타~~", allmoviesData);
-  console.log("장르오", genreList);
 
+  console.log("데이터",allmoviesData)
   return (
+    <div>
+    <Container>
+      <Button onClick={changeLanguage} variant="danger">Korean</Button>
+      <Button onClick={changeLanguage2} variant="danger">English</Button>
+      <Button>액션!</Button>
+      <Button>코메디!</Button>
+
+
+    </Container>
     <Container className="movies-container">
       <Row>
             {allmoviesData.results&& allmoviesData.results.map((item) => (
@@ -51,7 +72,12 @@ const Movies = () => {
         onChange={handlePageChange} // 페이지 변경을 핸들링하는 함수
       />
     </Container>
+    </div>
   );
 };
 
 export default Movies;
+
+
+//영화를 누르면 해당 정보를 가지고 디테일 페이지로 이동이 가능하게
+//한국영화 또는 

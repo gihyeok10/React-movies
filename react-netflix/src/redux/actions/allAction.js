@@ -1,10 +1,10 @@
 import api from "./api";
 const API_KEY = process.env.REACT_APP_API_KEY;
-function getAll(page) {
+function getAll(page,language) {
   return async (dispatch) => {
     try {
       const allmoviesApi = api.get(
-        `movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`
+        `movie/now_playing?api_key=${API_KEY}&language=${language}&page=${page}&region=KR`
       );
 
       const genreApi = api.get(
@@ -26,6 +26,14 @@ function getAll(page) {
         payload: {
           allmoviesData: allmoviesData.data,
           genreList: genreList.data.genres,
+        
+        },
+      });
+
+      dispatch({
+        type: "GET_LANGUAGE_SUCCESS",
+        payload: {
+          language:language
         },
       });
     } catch (error) {

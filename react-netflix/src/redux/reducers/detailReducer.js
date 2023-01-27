@@ -5,6 +5,8 @@ let initialState = {
   reviewsData: {},
   recommendData: {},
   trailerData:{},
+  language:""
+
 };
 
 function detailReducer(state = initialState, action) {
@@ -20,7 +22,11 @@ function detailReducer(state = initialState, action) {
         reviewsData: payload.reviewsData,
         recommendData:payload.recommendData,
         trailerData:payload.trailerData,
+        
       };
+
+      case "GET_LANGUAGE_SUCCESS":
+        return{...state, language:payload.language}
 
     default:
       return { ...state };
