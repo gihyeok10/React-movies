@@ -10,6 +10,9 @@ const Page = ({ item, genreList }) => {
       navigate(`/detail/${item.id}`)
       
   }
+  
+  
+  {
   return (
     <div
       className="card"
@@ -44,7 +47,12 @@ const Page = ({ item, genreList }) => {
         </div>
       </div>
     </div>
-  );
-};
+  );}}
+  
 
 export default Page;
+
+// {item.genre_ids&& item.genre_ids.map((id)=> {if(id == 18) return(
+//   <p>{item.title}</p>)
+//   }) }
+//장르아이디에서 장르가 id값이 인걸 찾는다 find => 찾았으면 => 다시 find로 그 
