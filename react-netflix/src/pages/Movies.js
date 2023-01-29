@@ -104,14 +104,16 @@ const Movies = () => {
           <Row>
             {allmoviesData.results &&
               allmoviesData.results.map((item) => (
-                <Col
+               
+                  
+                    item.genre_ids.map((id) => {
+                      if (id == genreId) return  <Col
                   lg={4}
                   key={item.id}
                   style={{ marginBottom: 30, marginTop: 30 }}
                 >
-                  {item.genre_ids &&
-                    item.genre_ids.map((id) => {
-                      if (id == genreId) return <div
+                      
+                      <div
       className="card"
       style={{
         backgroundImage:
@@ -144,8 +146,7 @@ const Movies = () => {
         </div>
       </div>
     </div>;
-                    })}
-                </Col>
+    </Col>     })
               ))}
           </Row>
 
