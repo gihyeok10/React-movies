@@ -292,3 +292,7 @@ ul.pagination li a.active {
 .all-card{
   color: white;
 }
+
+.genre-btn {}
+
+.genre-btn Button{margin-right: 1em;}
