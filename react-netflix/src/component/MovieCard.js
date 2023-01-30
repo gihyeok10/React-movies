@@ -16,6 +16,8 @@ const MovieCard = ({ item }) => {
 
   const { genreList } = useSelector((state) => state.movie);
   return (
+   
+    
     <div
       onClick={showDetail}
       className="card"
@@ -36,7 +38,7 @@ const MovieCard = ({ item }) => {
         <div>
           {item.genre_ids.map((id) => (
             <Badge bg="danger" key={id}>
-              {genreList.find((item) =>item.id == "28").name}
+              {genreList.find((item) =>item.id == id).name}
             </Badge>
           ))}
         </div>
@@ -47,7 +49,9 @@ const MovieCard = ({ item }) => {
         </div>
       </div>
     </div>
+    
   );
 };
+
 
 export default MovieCard;

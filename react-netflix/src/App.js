@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Movies from './pages/Movies';
 import MovieDetail from './pages/MovieDetail';
 import Navigation from './component/Navigation'
+import MovieSearch from './pages/MovieSearch';
 const API_KEY = process.env.REACT_APP_API_KEY;
 function  App() {
 
@@ -16,6 +17,7 @@ function  App() {
           <Route path="/" element={<Home/>}></Route>
           <Route path="/movies" element={<Movies/>}></Route>
           <Route path='/detail/:id' element={<MovieDetail/>}></Route>
+          <Route path="/search" element={<MovieSearch/>}></Route>
         </Routes>
     </div>
   );
