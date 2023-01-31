@@ -5,6 +5,7 @@ let initialState = {
   loading: true,
   genreList:[],
   moviesId: null,
+  page:1
 };
 
 function movieReducer(state = initialState, action) {
@@ -27,6 +28,7 @@ function movieReducer(state = initialState, action) {
         upcomingMovies: payload.upcomingMovies,
         genreList:payload.genreList,
         loading: false,
+        page:payload.page
       };
 
     default:

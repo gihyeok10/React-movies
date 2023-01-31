@@ -1,6 +1,6 @@
 import api from "./api";
 const API_KEY = process.env.REACT_APP_API_KEY;
-function getMovies() {
+function getMovies(page) {
   return async (dispatch) => {
     try {
 
@@ -14,7 +14,7 @@ function getMovies() {
       );
 
       const popularMoviesApi = api.get(
-        `movie/popular?api_key=${API_KEY}&language=en-US&page=1`
+        `movie/popular?api_key=${API_KEY}&language=en-US&page_size=10`
       );
 
       const upcomingApi = api.get(
@@ -44,6 +44,7 @@ function getMovies() {
           topRatedMovies: topRatedMovies.data,
           upcomingMovies: upcomingMovies.data,
           genreList:genreList.data.genres
+          ,page:page
         },
       });
      

@@ -42,7 +42,7 @@ const Movies = () => {
   };
 
   const totalPages = 200;
-
+  console.log("페이지요",page)
   console.log("데이터", allmoviesData);
   console.log("장르요", genreList);
   return (
