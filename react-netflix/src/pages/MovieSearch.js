@@ -5,6 +5,9 @@ import SearchCard from "../component/SearchCard";
 import { useSelector, useDispatch } from "react-redux";
 import Pagination from "react-js-pagination";
 import { searchAction } from "../redux/actions/searchAction";
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 const MovieSearch = () => {
   const dispatch = useDispatch();
   const [text, setText] = useState("");
@@ -17,7 +20,7 @@ const MovieSearch = () => {
     console.log("데이터", searchData);
   }, [name, page]);
 
-  const { searchData,genreList } = useSelector((state) => state.search);
+  const { searchData, genreList } = useSelector((state) => state.search);
 
   const onChange = (event) => {
     setText(event.target.value);
@@ -32,40 +35,44 @@ const MovieSearch = () => {
       <div className="search-container">
         <Container className="search-bar">
           <div>
-            <div className="search-h1">
-              <h1>SEARCH BAR</h1>
-            </div>
-            <div className="search-box">
-              <input type="text" onChange={onChange} value={text}></input>
-            </div>
+            <h1 style={{ color: "white" }}>What movie are you looking for?</h1>
 
-            <Button
-              onClick={() => {
-                setName(text);
-              }}
-            >
-              클릭!
-            </Button>
+            <div className="input-box">
+              <input
+                className="input"
+                type="text"
+                onChange={onChange}
+                value={text}
+                placeholder="    search movie name"
+              ></input>
+
+              <Button
+                variant="outline-danger"
+                onClick={() => {
+                  setName(text);
+                }}
+              >
+               <FontAwesomeIcon icon={faSearch}/>
+              </Button>
+            </div>
+            <div className="button-box"></div>
           </div>
         </Container>
       </div>
 
       <Container>
         <Row>
-          {searchData.results && searchData.results.map((item)=> (
-            <Col
-                  lg={4}
-                  key={item.id}
-                  style={{ marginBottom: 30, marginTop: 30 }}
-                >
-                   <SearchCard item={item} genreList={genreList}/>
-                </Col>
-           
-          ))
-          
-          }
+          {searchData.results &&
+            searchData.results.map((item) => (
+              <Col
+                lg={4}
+                key={item.id}
+                style={{ marginBottom: 30, marginTop: 30 }}
+              >
+                <SearchCard item={item} genreList={genreList} />
+              </Col>
+            ))}
         </Row>
-
       </Container>
 
       <Pagination
@@ -90,6 +97,8 @@ export default MovieSearch;
 //받은 프롭스로 랜더링. (해당 영화 클릭시 디테일 페이지로 넘어가게 해준다.)
 
 //오늘은 이것만하면 퍼블리셔만 하면 끝.
+
+//input창 꾸미기 버튼 배치
 
 // {popularMovies.results&& popularMovies.results.map((item) =>{
 //   if(item.title.toUpperCase().includes(name.toUpperCase())) return <h1>{item.title}</h1>
