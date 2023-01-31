@@ -8,7 +8,7 @@ const GenresCard = ({ item, genreList }) => {
     navigate(`/detail/${item.id}`);
   };
 
-  {
+  
     return (
       <div
         className="card"
@@ -44,7 +44,7 @@ const GenresCard = ({ item, genreList }) => {
       </div>
     );
   }
-};
+
 
 export default GenresCard;
 

@@ -12,7 +12,7 @@ const Page = ({ item, genreList }) => {
   }
   
   
-  {
+  
   return (
     <div
       className="card"
@@ -47,7 +47,7 @@ const Page = ({ item, genreList }) => {
         </div>
       </div>
     </div>
-  );}}
+  );}
   
 
 export default Page;

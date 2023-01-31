@@ -3,7 +3,6 @@ import { Badge, Col, Container, Row, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { detailAction } from "../redux/actions/detailAction";
-import { movieAction } from "../redux/actions/movieAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faUser, faStar } from "@fortawesome/free-solid-svg-icons";
 import RecommendCard from "../component/RecommendCard";
