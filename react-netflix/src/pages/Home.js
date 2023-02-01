@@ -22,7 +22,7 @@ const Home = () => {
 
   if(loading){
     console.log("lodaingr값",loading)
-    return <div>
+    return <div style={{textAlign:"center"}}>
        <ClipLoader
         color= "tomato"
         loading={loading}
@@ -51,3 +51,6 @@ const Home = () => {
 };
 //조건부 랜더링
 export default Home;
+
+
+//베너 스타일, 유튜브 링크, 상단 네임 ,코드 리펙토링,

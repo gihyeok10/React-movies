@@ -1,6 +1,7 @@
 let initialState = {
     searchData:{},
     genreList:[],
+    loading: true,
    
   };
   

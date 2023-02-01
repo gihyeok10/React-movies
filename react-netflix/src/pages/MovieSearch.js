@@ -8,6 +8,7 @@ import { searchAction } from "../redux/actions/searchAction";
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+
 const MovieSearch = () => {
   const dispatch = useDispatch();
   const [text, setText] = useState("");
@@ -30,6 +31,7 @@ const MovieSearch = () => {
     setPage(page);
   };
 
+  
   return (
     <div>
       <div className="search-container">
@@ -39,6 +41,9 @@ const MovieSearch = () => {
 
             <div className="input-box">
               <input
+              onKeyPress={(e) => {if(e.key === "Enter") {
+                setName(text);
+              }}}
                 className="input"
                 type="text"
                 onChange={onChange}
@@ -107,6 +112,5 @@ export default MovieSearch;
 
 
 //내일
-// 카드 디자인 안에 / 커지는 효과? /카드 디자인 로딩창 가운데/ 메인창 디자인/ onckypress/ 
-
+// 커지는 효과?  로딩창 가운데
 

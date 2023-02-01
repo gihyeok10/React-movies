@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Col, Container, Row, Button, Modal } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import YouTube from "react-youtube";
 
 const Youtube = (props) => {

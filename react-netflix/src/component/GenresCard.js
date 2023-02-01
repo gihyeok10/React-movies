@@ -2,7 +2,7 @@ import React from "react";
 import { Badge } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faStar} from "@fortawesome/free-solid-svg-icons"
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const GenresCard = ({ item, genreList }) => {
   const navigate = useNavigate();
@@ -27,23 +27,31 @@ const GenresCard = ({ item, genreList }) => {
       }}
     >
       <div className="overlay2">
-        <h3 style={{marginLeft:10,marginBottom:20}}>{item.title}</h3>
+        <h3 style={{ marginLeft: 10, marginBottom: 20 }}>{item.title}</h3>
 
         {item.genre_ids && (
           <div>
             {item.genre_ids.map((id) => (
-              <Badge bg="danger" key={id} style={{margin:5}}>
+              <Badge bg="danger" key={id} style={{ margin: 5 }}>
                 {genreList.find((item) => item.id == id).name}
               </Badge>
             ))}
           </div>
         )}
         <div className="page-info">
-        <p>{item.overview.substr(0,150)}...</p>
-        </div>   
+          <p>{item.overview.substr(0, 150)}...</p>
+        </div>
         <div>
-          <span><FontAwesomeIcon icon={faStar} style={{ fontSize: 20, color:"gold",marginLeft:10 }} />   {item.vote_average}</span>
-          <span className="adult-div">{item.vote_adult ? "Over 18" : "Under 18 "}</span>
+          <span>
+            <FontAwesomeIcon
+              icon={faStar}
+              style={{ fontSize: 20, color: "gold", marginLeft: 10 }}
+            />{" "}
+            {item.vote_average}
+          </span>
+          <span className="adult-div">
+            {item.vote_adult ? "Over 18" : "Under 18 "}
+          </span>
         </div>
       </div>
     </div>
