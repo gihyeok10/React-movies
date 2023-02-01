@@ -53,6 +53,7 @@
 
 .movies{
   color:red;
+  margin-top: 2em;
 }
 
 .container{
@@ -344,4 +345,5 @@ ul.pagination li a.active {
   justify-content: center;
   align-items: center;
 }
+
 

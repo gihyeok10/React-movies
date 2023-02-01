@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Banner from "../component/Banner";
 import MovieSlide from "../component/MovieSlide";
 import ClipLoader from "react-spinners/ClipLoader";
+import { Container } from "react-bootstrap";
 const Home = () => {
   const { popularMovies, topRatedMovies, upcomingMovies,loading } = useSelector(
     (state) => state.movie
@@ -37,12 +38,14 @@ const Home = () => {
     <div className="home-div">
       <Banner movie={popularMovies.results[4]} />
 
+      <Container>
       <h1 className="movies">popularMovies</h1>
-      <MovieSlide movies={popularMovies} />
+      <MovieSlide movies={popularMovies} className="movie-box-margin"/>
       <h1 className="movies">top rated movie</h1>
-      <MovieSlide movies={topRatedMovies} />
+      <MovieSlide movies={topRatedMovies} className="movie-box-margin"/>
       <h1 className="movies">upcoming moveie</h1>
-      <MovieSlide movies={upcomingMovies} />
+      <MovieSlide movies={upcomingMovies} className="movie-box-margin"/>
+      </Container>
     </div>
   );
 };

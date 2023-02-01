@@ -104,3 +104,9 @@ export default MovieSearch;
 //   if(item.title.toUpperCase().includes(name.toUpperCase())) return <h1>{item.title}</h1>
 //  }
 // )}
+
+
+//내일
+// 카드 디자인 안에 / 커지는 효과? /카드 디자인 로딩창 가운데/ 메인창 디자인/ onckypress/ 
+
+

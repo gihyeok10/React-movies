@@ -84,7 +84,7 @@ const MovieDetail = () => {
 
             <div className="vote-div">
               <div>
-                <FontAwesomeIcon icon={faStar} style={{ fontSize: 20 }} />
+                <FontAwesomeIcon icon={faStar} style={{ fontSize: 20, color:"gold", }} />
                 {detailData.vote_average}
               </div>
 
