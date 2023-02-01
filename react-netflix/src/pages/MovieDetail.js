@@ -49,18 +49,17 @@ const MovieDetail = () => {
         <Row>
           <Col lg={6}>
             <div
-              className="card"
+              
               style={{
-                backgroundImage:
-                  "url(" +
-                  `https://www.themoviedb.org/t/p/w600_and_h900_bestv2${detailData.poster_path}` +
-                  ")",
+                
                 height: 900,
                 width: 600,
                 borderRadius: 0,
                 borderColor: "black",
               }}
-            ></div>
+            >
+              <img src={"https://www.themoviedb.org/t/p/original/"+`${detailData.poster_path}`} style={{width:600,height:900}}></img>
+            </div>
           </Col>
           <Col lg={4}>
             <div className="genres-div">

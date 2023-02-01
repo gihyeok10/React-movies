@@ -36,15 +36,15 @@ const Home = () => {
   }
   return (
     <div className="home-div">
-      <Banner movie={popularMovies.results[4]} />
+      <Banner movie={popularMovies.results[10]} />
 
       <Container>
-      <h1 className="movies">popularMovies</h1>
-      <MovieSlide movies={popularMovies} className="movie-box-margin"/>
-      <h1 className="movies">top rated movie</h1>
-      <MovieSlide movies={topRatedMovies} className="movie-box-margin"/>
-      <h1 className="movies">upcoming moveie</h1>
-      <MovieSlide movies={upcomingMovies} className="movie-box-margin"/>
+      <h1 className="movies">Top Popular Movies</h1>
+      <MovieSlide movies={popularMovies}/>
+      <h1 className="movies">Top Rated Movies</h1>
+      <MovieSlide movies={topRatedMovies} />
+      <h1 className="movies">Upcoming Movies</h1>
+      <MovieSlide movies={upcomingMovies} />
       </Container>
     </div>
   );
