@@ -12,6 +12,7 @@
   <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=Bootstrap&logoColor=white"/>
 </div>
 <a href="url" > <h2>:mag: link </h2></a>
+<img src="./movies_img/all.png"></img>
 <a href="url" > <h2>:pencil: App Composition </h2> </a>
 <a href="url" > <h3>:pushpin: Home </h2> </a>
 <a href="url" > <h3>:pushpin: Detail </h2> </a>
