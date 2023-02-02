@@ -22,8 +22,14 @@ code {
   src: url(./font/Lora-Italic-VariableFont_wght.ttf);
 }
 
+@font-face {
+  font-family: "googleFran";
+  src: url(./font/FrancoisOne-Regular.ttf);
+}
+
 :root{
   --font-googleOswald: "googleOswald";
   --font-googleOFL:"googleOFL";
+  --font-googleFran:"googleFran";
 
 }

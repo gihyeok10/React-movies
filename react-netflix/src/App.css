@@ -5,12 +5,15 @@
 }
 .nav-item:hover{color: red;}
 
+
+.nav-bar h2{
+  font-family:var(--font-googleFran); 
+  color: red;
+}
 .banner{
   height: 600px;
   display: flex;
-  align-items: center;
   color: white;
-  margin-bottom: 30px;
   background-size: cover;
   background-repeat: no-repeat; 
 }
@@ -37,6 +40,7 @@
   width: 30%;
   margin-left: 30px;
   z-index: 1;
+  align-self: center;
 }
 
 .banner-info p{
@@ -104,9 +108,7 @@
   font-family:var(--font-googleOswald); 
 }
 
-.container{
-  
-}
+
 
 .Badge{margin: 5px;
 }

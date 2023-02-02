@@ -16,6 +16,7 @@ const Banner = ({ movie }) => {
         <h1 className="google-font">{movie.title}</h1>
         <p>{movie.overview}</p>
       </div>
+   
     </div>
   );
 };

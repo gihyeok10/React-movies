@@ -9,7 +9,7 @@ function NavScrollExample() {
   return (
     <Navbar bg="black" variant="dark" expand="lg" className='nav-bar'>
       <Container fluid>
-        <Navbar.Brand href="#"><img width={100} src ="https://www.edigitalagency.com.au/wp-content/uploads/Netflix-logo-red-black-png.png" /></Navbar.Brand>
+        <Navbar.Brand><Link to='/' className='nav-item'><h2>GI MOVIES</h2></Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
