@@ -5,11 +5,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
 function NavScrollExample() {
+
+  const navigate = useNavigate()
+
   return (
     <Navbar bg="black" variant="dark" expand="lg" className='nav-bar'>
       <Container fluid>
-        <Navbar.Brand><Link to='/' className='nav-item'><h2>GI MOVIES</h2></Link></Navbar.Brand>
+        <Navbar.Brand><h2 onClick={() => navigate('/')}>GI MOVIES</h2></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav

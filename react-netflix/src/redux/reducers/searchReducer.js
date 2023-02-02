@@ -15,6 +15,7 @@ let initialState = {
           ...state,
           searchData:payload.searchData,
           genreList:payload.genreList,
+          loading: false,
           
         };
   

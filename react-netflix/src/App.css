@@ -9,6 +9,11 @@
 .nav-bar h2{
   font-family:var(--font-googleFran); 
   color: red;
+  cursor: pointer;
+}
+
+.nav-bar h2:hover{
+  color: white;
 }
 .banner{
   height: 600px;

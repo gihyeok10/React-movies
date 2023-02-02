@@ -54,7 +54,7 @@ const Movies = () => {
         <Button onClick={changeLanguage2} variant="danger">
           English
         </Button>
-        <Button
+        <Button  variant="outline-danger"
           onClick={() => {
             setScreen(true);
             setGenre(false);
@@ -62,7 +62,7 @@ const Movies = () => {
         >
           ALL
         </Button>
-        <Button
+        <Button  variant="outline-danger"
           onClick={() => {
             setGenreId(28);
             setScreen(false);
@@ -71,7 +71,7 @@ const Movies = () => {
         >
           Action
         </Button>
-        <Button
+        <Button  variant="outline-danger"
           onClick={() => {
             setGenreId(35);
             setScreen(false);
@@ -80,7 +80,7 @@ const Movies = () => {
         >
           Comedy
         </Button>
-        <Button
+        <Button  variant="outline-danger"
           onClick={() => {
             setGenreId(18);
             setScreen(false);
@@ -89,7 +89,7 @@ const Movies = () => {
         >
           Drama
         </Button>
-        <Button
+        <Button  variant="outline-danger"
           onClick={() => {
             setGenreId(80);
             setScreen(false);
