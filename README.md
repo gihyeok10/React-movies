@@ -14,7 +14,7 @@
 <a href="url" > <h2>:mag: link </h2></a>
 <a href="url" > <h2>:pencil: App Composition </h2> </a>
 <a href="url" > <h3>:pushpin: Home </h2> </a>
-<img src="https://user-images.githubusercontent.com/103566149/216255166-e833d7a0-466e-4bed-81bd-ff69c2af4366.png">
+<img src="https://user-images.githubusercontent.com/103566149/216255581-df6777d7-cd85-4f39-904d-0c82a4de61bb.png">
 <a href="url" > <h3>:pushpin: Detail </h2> </a>
 <a href="url" > <h3>:pushpin: Search Page </h2> </a>
 <a href="url" > <h3>:pushpin: All Movie Page </h2> </a>
