@@ -13,6 +13,16 @@
 <a href="url" > <h2>:mag: link </h2></a>
 <img src="./movies_img/all.png"></img>
 <a href="url" > <h2>:pencil: App Composition </h2> </a>
+<a href="url" > <h2>:notebook_with_decorative_cover: App Function </h2> </a>
+<p>Using the movie API</p>
+<p>You can watch popular movies, top rated movies, and upcoming movies.</p>
+<p>Click on a movie card to view movie details.</p>
+<p>In Movie Details, you can see various information and trailer images about the movie.</p>
+<p>You can choose between English and Korean versions, and you can choose the genre you want.</p>
+<p>You can search for the movie you want.</p>
+
+
+
 <a href="url" > <h3>:pushpin: Home </h2> </a>
 <img src="https://user-images.githubusercontent.com/103566149/216255581-df6777d7-cd85-4f39-904d-0c82a4de61bb.png">
 <img src="https://user-images.githubusercontent.com/103566149/216505239-07483c9b-e5a0-4757-ab15-41c6fc1d8321.png">
