@@ -16,9 +16,18 @@
 <a href="url" > <h2>:pencil: App Composition </h2> </a>
 <a href="url" > <h3>:pushpin: Home </h2> </a>
 <img src="https://user-images.githubusercontent.com/103566149/216255581-df6777d7-cd85-4f39-904d-0c82a4de61bb.png">
+<img src="https://user-images.githubusercontent.com/103566149/216505239-07483c9b-e5a0-4757-ab15-41c6fc1d8321.png">
+
+
 <a href="url" > <h3>:pushpin: Detail </h2> </a>
+<img src="https://user-images.githubusercontent.com/103566149/216505420-0694644a-a356-4dc4-a049-fc1486ac2b67.png">
+<img src="https://user-images.githubusercontent.com/103566149/216505433-014ab4b6-4901-473c-81fa-8b1b01601892.png">
+<img src="https://user-images.githubusercontent.com/103566149/216505443-bd9cfe1a-97ca-4230-82c7-ef26df8e76bb.png">
+
 <a href="url" > <h3>:pushpin: Search Page </h2> </a>
+<img src="https://user-images.githubusercontent.com/103566149/216505661-2482a778-cd52-4924-83a7-0a390ecc7cdc.png">
 <a href="url" > <h3>:pushpin: All Movie Page </h2> </a>
+<img src="https://user-images.githubusercontent.com/103566149/216505813-059556c1-a034-4d39-b8e2-fc81f1eb9c20.png">
 
 
 
