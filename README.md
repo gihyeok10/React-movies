@@ -12,6 +12,7 @@
 </div>
 <a href="url" > <h2>:mag: link </h2></a>
 <a href="url" > <h2>:bar_chart: App Composition </h2> </a>
+<img src="https://user-images.githubusercontent.com/103566149/216525469-589671ae-3369-4b9d-b97e-ca0341028b99.png">
 <a href="url" > <h2>:notebook_with_decorative_cover: App Function </h2> </a>
 <p style=fontWeight:"bold">:pushpin: Using the movie API</p>
 <p>:heavy_check_mark: You can watch popular movies, top rated movies, and upcoming movies.</p>
