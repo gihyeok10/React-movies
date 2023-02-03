@@ -14,12 +14,12 @@
 <img src="./movies_img/all.png"></img>
 <a href="url" > <h2>:pencil: App Composition </h2> </a>
 <a href="url" > <h2>:notebook_with_decorative_cover: App Function </h2> </a>
-<p>Using the movie API</p>
-<p>You can watch popular movies, top rated movies, and upcoming movies.</p>
-<p>Click on a movie card to view movie details.</p>
-<p>In Movie Details, you can see various information and trailer images about the movie.</p>
-<p>You can choose between English and Korean versions, and you can choose the genre you want.</p>
-<p>You can search for the movie you want.</p>
+<p style=fontWeight:"bold">:pushpin: Using the movie API</p>
+<p>:heavy_check_mark: You can watch popular movies, top rated movies, and upcoming movies.</p>
+<p>:heavy_check_mark: Click on a movie card to view movie details.</p>
+<p>:heavy_check_mark: In Movie Details, you can see various information and trailer images about the movie.</p>
+<p>:heavy_check_mark: You can choose between English and Korean versions, and you can choose the genre you want.</p>
+<p>:heavy_check_mark: You can search for the movie you want.</p>
 
 
 
