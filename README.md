@@ -11,8 +11,7 @@
   <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=Bootstrap&logoColor=white"/>
 </div>
 <a href="url" > <h2>:mag: link </h2></a>
-<img src="./movies_img/all.png"></img>
-<a href="url" > <h2>:pencil: App Composition </h2> </a>
+<a href="url" > <h2>:bar_chart: App Composition </h2> </a>
 <a href="url" > <h2>:notebook_with_decorative_cover: App Function </h2> </a>
 <p style=fontWeight:"bold">:pushpin: Using the movie API</p>
 <p>:heavy_check_mark: You can watch popular movies, top rated movies, and upcoming movies.</p>
