@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/>
   <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=Bootstrap&logoColor=white"/>
 </div>
-<a href="url" > <h2>:mag: link </h2></a>
+<a href="url" > <h2>:mag: Link </h2></a>
 <a href="url" > <h2>:bar_chart: App Composition </h2> </a>
 <img src="https://user-images.githubusercontent.com/103566149/216525469-589671ae-3369-4b9d-b97e-ca0341028b99.png">
 <a href="url" > <h2>:notebook_with_decorative_cover: App Function </h2> </a>
