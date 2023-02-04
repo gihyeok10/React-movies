@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: "googleOswald";
+  src: url(./font/Oswald/Oswald-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "googleOFL";
+  src: url(./font/Lora-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "googleFran";
+  src: url(./font/FrancoisOne-Regular.ttf);
+}
+
+:root{
+  --font-googleOswald: "googleOswald";
+  --font-googleOFL:"googleOFL";
+  --font-googleFran:"googleFran";
+
+}
