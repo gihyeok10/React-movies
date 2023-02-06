@@ -9,6 +9,7 @@ import MovieSearch from './pages/MovieSearch';
 const API_KEY = process.env.REACT_APP_API_KEY;
 function  App() {
 
+  
   return (
     <div className='all'>
       <Navigation>
@@ -37,3 +38,7 @@ export default App;
 //       9. 검색 기능을 할 수 있다.
 //       10. 영화 정렬 가능
 //       11. 영화를 필터링 할 수 있다. 
+
+
+
+//https://gimoves.netlify.app/ --> 사이트 주소
