@@ -37,7 +37,7 @@ const Home = () => {
   }
   return (
     <div className="home-div">
-      <Banner movie={popularMovies.results[10]} />
+      <Banner movie={popularMovies.results[0]} />
 
       <Container>
       <h1 className="movies">Top Popular Movies</h1>

@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import { detailAction } from "../redux/actions/detailAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faUser, faStar } from "@fortawesome/free-solid-svg-icons";
-import RecommendCard from "../component/RecommendCard";
 import Modal from "../component/Youtube";
+import MovieCard from "../component/MovieCard";
 const MovieDetail = () => {
   const { id } = useParams();
 
@@ -204,7 +204,7 @@ const MovieDetail = () => {
                 key={item.id}
                 style={{ marginBottom: 30, marginTop: 30 }}
               >
-                <RecommendCard item={item} genreList={genreList} />
+                <MovieCard item={item} genreList={genreList} />
               </Col>
             ))}
           </Row>
