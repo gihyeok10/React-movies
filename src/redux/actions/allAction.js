@@ -1,5 +1,6 @@
 import api from "./api";
-const API_KEY = process.env.REACT_APP_API_KEY;
+// const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = "bbf06418c6753b7dbc8d03c06aad460c"
 function getAll(page,language) {
   return async (dispatch) => {
     try {
