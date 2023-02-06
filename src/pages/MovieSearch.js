@@ -89,7 +89,11 @@ const MovieSearch = () => {
         nextPageText={">"} // "다음"을 나타낼 텍스트
         onChange={handlePageChange} // 페이지 변경을 핸들링하는 함수
       />
+      <div style={{backgroundColor:"black", height:200}}>
+
+      </div>
     </div>
+    
   );
 };
 
